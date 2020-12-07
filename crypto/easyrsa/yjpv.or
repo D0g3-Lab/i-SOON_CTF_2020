@@ -1,0 +1,40 @@
+#!/hpg/sdw/oryufw
+cgfn Bgroyf.Hyde.whnstg dnofgy ltyOgdnt
+dnofgy lnor2
+
+# --------------bujeetwlt 1-------------
+o = ltyOgdnt(1024)
+x = ltyOgdnt(1024)
+t = ltyOgdnt(16)
+w = o*x
+oud = (x-1) * (o-1)
+b = lnor2.ofznfk(n,t,w)
+udwy = 2 * k + 246810 * t * oud
+ogdwy(w)
+ogdwy(b)
+ogdwy(udwy)
+
+# --------------bujeetwlt 2-------------
+o = ltyOgdnt(4096)
+g = ltyOgdnt(4096)
+x = n
+t = 0i10001
+udwy = srytp_yf_efwl(udwy)
+w = o*x*g
+b = lnor2.ofznfk(udwy,t,w)
+ogdwy(w)
+ogdwy(o)
+ogdwy(b)
+
+# --------------bujeetwlt 3-------------
+n = srytp_yf_efwl(cejl)
+x = ltyOgdnt(1024)
+o = ltyOgdnt(1024)
+w = x*o
+t = 5
+b = ofz(n,t,w)
+ogdwy(w)
+ogdwy(b)
+
+
+
