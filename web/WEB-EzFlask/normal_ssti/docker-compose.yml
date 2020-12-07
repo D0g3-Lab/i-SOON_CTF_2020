@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  normal_ssti:
+    build: .
+    ports:
+      - 5050:8822
+    restart: always
+    container_name: normal_ssti
