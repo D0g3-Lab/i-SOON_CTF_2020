@@ -1,0 +1,48 @@
+html,
+body,
+pre,
+code,
+kbd,
+samp {
+  font-family: "Press Start 2P";
+	-webkit-font-smoothing: none;
+}
+
+body {
+  background: #7FB5B5;
+  padding: 20px;
+}
+
+#app {
+  background: #fff;
+  border-radius: 10px;
+	box-shadow: 8px 8px 20px #666;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+/* .title .name{
+  display: inline-block;
+  vertical-align: middle;
+}
+.title .logo{
+  display: inline-block;
+} */
+
+li {
+  margin: 8px 0;
+}
+
+.padding {
+  padding: 1px 7px 2px;
+}
+
+.flex {
+  display: flex;
+}
+
+.space {
+  flex-grow: 1;
+}
+
+/* Uses NES.CSS for Styling */

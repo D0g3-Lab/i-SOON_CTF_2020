@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="./css/user.css">
+    <link href="./css/nes.css" rel="stylesheet" />
+  </head>
+</html>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/sanitize-html.min.js"></script>
+
+<body>
+    <div id="app">
+        <div id="Nintendo-characters" class="item">
+            <!-- Copyright Nintendo -->
+            <i class="nes-mario"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-ash"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-pokeball"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-bulbasaur"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-charmander"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-squirtle"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="nes-kirby"></i>
+        </div>
+        <br>
+          
+      <h1>D0g3 Member Shop2020</h1>
+    
+      <span>&nbsp</span>
+      </ul>
+    </div>
+    
+    <section class="nes-container">
+      <section class="message-list">
+        <section class="message -left">
+          <i class="nes-bcrikko"></i>
+          <!-- Balloon -->
+          <div class="nes-balloon from-left">
+            <p>Hello <h id="name"></h>!</p>
+          </div>
+        </section>
+    
+        <section class="message -left">
+          <i class="nes-octocat animate"></i>
+          <!-- Balloon -->
+          <div class="nes-balloon from-left">
+            <p id="text">Hello, Wish you have a Good Day</p>
+          </div>
+        </section>
+      </section>
+    </section>
+
+
+    <div class="nes-container is-dark with-title">
+        <p class="title">Hint</p>
+        <p>Hello CTFERS,THIS is MemoberShop 2020 Game Online</p>
+        <p>Solution to :<a href="https://hpdoger.cn/2019/12/01/I-SOON2019-Membershop%E5%87%BA%E9%A2%98%E6%80%9D%E8%B7%AF/">MemoberShop 2019</a>.Seems same in a few tricks</p>
+        <p>To avoid Hackers,I use <a href="https://github.com/apostrophecms/sanitize-html">sanitize-html</a>(latest version) for filter.</p>
+        <p>By the Way, I Fixed its tiny bug.And Set Flag in Admin Cookie</p>
+        <p>Still Vulnerable? Click <a href="/submit">HERE</a> to Submit bug inside</p>
+      </div>
+</body>
+
+<script>
+
+var Mconfig = {
+    user: "D0g3",
+    time: "2020",
+    title: "MemberShop2020",
+    text: 'Hello World!'
+}
+
+let paras = new URLSearchParams(window.location.search)
+
+let Myobj = paras.get("data")? JSON.parse(paras.get("data")) : Mconfig
+clearDeep(Myobj) //avoid hackers
+
+$.extend(true,Mconfig,Myobj)
+
+document.getElementById("name").innerText = Mconfig["user"];
+
+document.getElementById("text").innerHTML = sanitizeHtml(Mconfig["text"]);
+
+
+function clearDeep(obj) {
+    if (!obj || !typeof obj === 'object') return
+    const keys = Object.keys(obj)
+    for (var key of keys) {
+      const val = obj[key]
+      if (key == '*') {
+        delete obj[key]
+      }
+      if (typeof val === 'object') {
+        clearDeep(obj[key])
+      }
+    }
+}
+</script>
