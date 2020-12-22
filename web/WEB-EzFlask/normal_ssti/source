@@ -1,0 +1,49 @@
+from flask import *
+
+app = Flask(__name__)
+secret_pwd = "*********"
+
+
+@app.route("/index", methods=["GET"])
+def index():
+    with open('source','r+') as f:
+        return f.read()
+
+
+@app.route("/admin", methods=["GET"])
+def check_input():
+    secret = request.args.get('secret')
+    if secret == secret_pwd:
+        username = request.args.get('username')
+        if check(username):
+            return "nononono"
+        else:
+            return render_template_string("<h1>UserName：{}".format(username))
+    return "you need secret"
+
+
+@app.errorhandler(404)
+def error(e):
+    url = request.args.get('url')
+    if not url:
+        url = request.url
+    if '{{' in url or '(' in url:
+        return "nononono"
+    template = """
+    <h1>404 Not Found</h1>
+    <h2>{}</h2>
+    """.format(url)
+    return render_template_string(template)
+
+
+def check(username):
+    black_list = ['"', '\\x', 'request', 'session', '[', ']', 'set', 'class', 'os', 'format', 'str', 'join',
+                  'lower', 'reverse', 'list', '__', 'base', 'if', '{{', ' ', '""', '~', '+']
+    for _ in black_list:
+        if _ in username.lower():
+            return True
+    return False
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8822)
